@@ -1,0 +1,40 @@
+html {
+    // this defines what 1rem is 10px
+    font-size: 62.5%;
+    box-sizing: border-box;
+    font-family: 'Lato-Regular';
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    font-family: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-family: inherit;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
