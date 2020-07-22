@@ -18,21 +18,22 @@
         position: relative;
         display: inline-block;
 
-        margin: 3.5rem auto 2rem;
+        margin: 2.5rem auto 0;
     }
 
     .nav {
         margin: 2rem auto;
 
         &__lists {
-            // display: flex;
+            display: flex;
             // flex-direction: column;
-            // justify-content: center;
-            // align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
         }
 
         &__item {
-            margin: 1.5rem auto;
+            margin: 1.5rem 1rem;
         }
 
         &__link {

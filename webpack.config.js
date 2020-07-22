@@ -14,7 +14,15 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: './src/index.html'
-        })
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'category.html',
+            template: 'src/category.html',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'week.html',
+            template: 'src/week.html',
+        }),
     ],
     module: {
         rules: [{

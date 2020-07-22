@@ -1,0 +1,34 @@
+.creation-section {
+    text-align: center;
+
+    .task {
+
+        &__creation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+
+            &>* {
+                margin: 1.5rem;
+            }
+        }
+
+        &__group {
+            position: relative;
+
+        }
+
+        &__input {}
+
+        &__label {}
+    }
+
+    .btn--add-task {
+        padding: .5rem 1.5rem;
+        background-color: $color-orange;
+        color: $color-white;
+        border-radius: 10px;
+    }
+
+}
