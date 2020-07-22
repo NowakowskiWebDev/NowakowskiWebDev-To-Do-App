@@ -27,19 +27,77 @@
         </header>
         <main class="main">
             <section class="creation-section">
-                <h2 class="heading-secondary task__heading-secondary">Dodaj zadanie</h2>
-                <form class="task__creation">
-                    <div class="task__group">
-                        <input id="task__input-name" class="input task__input" type="text" placeholder="Zadanie">
-                        <label class="label task__label" for="task__input-name">Zadanie</label>
+                <h2 class="creation__heading-secondary">Dodaj zadanie</h2>
+                <form class="creation__task">
+                    <div class="creation__group">
+                        <input id="creation__input-name" class="input creation__input" type="text"
+                            placeholder="Zadanie">
+                        <label class="label creation__label" for="creation__input-name">Zadanie</label>
                     </div>
-                    <div class="task__group">
-                        <input id="task__input-category" class="input task__input" type="text" placeholder="Kategoria">
-                        <label class="label task__label" for="task__input-category">Kategoria</label>
+                    <div class="creation__group">
+                        <input id="creation__input-category" class="input creation__input" type="text"
+                            placeholder="Kategoria">
+                        <label class="label creation__label" for="creation__input-category">Kategoria</label>
                     </div>
+                    <select class="creation__select" name="day" id="day">
+                        <option value="">--Dzień--</option>
+                        <option value="monday">Poniedziałek</option>
+                        <option value="tuesday">Wtorek</option>
+                        <option value="wednesday">Środa</option>
+                        <option value="thursday">Czwartek</option>
+                        <option value="friday">Piątek</option>
+                        <option value="saturday">Sobota</option>
+                        <option value="sunday">Niedziela</option>
+                    </select>
                     <button class="btn btn--add-task">Dodaj</button>
                 </form>
                 <p class="creation-section__warning"></p>
+            </section>
+            <section class="tasks-section">
+                <div class="task__nameValues">
+                    <h3 class="heading-tertiary task__heading-tertiary">Nazwa zadania</h3>
+                    <h3 class="heading-tertiary task__heading-tertiary">Kategoria</h3>
+                </div>
+                <ul id="task__lists" class="task__lists">
+                    <li class="task__item">
+                        <div class="task__values">
+                            <p class="task__item-name">Wyrzucić śmieci</p>
+                            <p class="task__item-category">Dom</p>
+                        </div>
+
+                        <button class="btn btn--task-done">zrobione</button>
+                        <button class="btn btn--task-remove">usuń</button>
+                        <button class="btn btn--task-edit">edytuj</button>
+                    </li>
+
+                    <li class="task__item">
+                        <div class="task__values">
+                            <p class="task__item-name">Odrobić zadanie domowe</p>
+                            <p class="task__item-category">Szkoła</p>
+                        </div>
+                        <button class="btn btn--task-done">kupione</button>
+                        <button class="btn btn--task-remove">usuń</button>
+                        <button class="btn btn--task-edit">edytuj</button>
+                    </li>
+                    <li class="task__item">
+                        <div class="task__values">
+                            <p class="task__item-name">Zapłacić za internet</p>
+                            <p class="task__item-category">Rachunki</p>
+                        </div>
+                        <button class="btn btn--task-done">kupione</button>
+                        <button class="btn btn--task-remove">usuń</button>
+                        <button class="btn btn--task-edit">edytuj</button>
+                    </li>
+                    <li class="task__item">
+                        <div class="task__values">
+                            <p class="task__item-name">Zrobić listę produktów do kupienia na imprezę</p>
+                            <p class="task__item-category">Rachunki</p>
+                        </div>
+                        <button class="btn btn--task-done">kupione</button>
+                        <button class="btn btn--task-remove">usuń</button>
+                        <button class="btn btn--task-edit">edytuj</button>
+                    </li>
+                </ul>
             </section>
         </main>
         <footer class="footer">

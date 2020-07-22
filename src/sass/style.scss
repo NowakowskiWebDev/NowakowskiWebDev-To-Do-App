@@ -1,5 +1,6 @@
 @import 'abstracts/fonts';
 @import 'abstracts/variables';
+@import 'abstracts/mixins';
 
 @import 'base/base';
 @import 'base/body';
@@ -7,9 +8,9 @@
 @import 'components/button';
 @import 'components/label';
 @import 'components/input';
-@import 'components/heading-secondary';
 
 @import 'layout/header';
 @import 'layout/main';
 @import 'layout/creation-section';
+@import 'layout/tasks-section';
 @import 'layout/footer';

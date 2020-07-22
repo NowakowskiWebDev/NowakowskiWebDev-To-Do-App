@@ -4,6 +4,12 @@
     align-items: center;
 }
 
+@mixin flexAround {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 /*
 MEDIA QUERY
 0 - 599px;      Phone

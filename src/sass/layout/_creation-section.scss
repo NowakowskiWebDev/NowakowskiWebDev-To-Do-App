@@ -1,9 +1,17 @@
 .creation-section {
     text-align: center;
 
-    .task {
+    .creation {
 
-        &__creation {
+        &__heading-secondary {
+            text-align: center;
+            font-size: 1.7rem;
+            font-family: 'Lato-Bold';
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        &__task {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -18,17 +26,12 @@
             position: relative;
 
         }
-
-        &__input {}
-
-        &__label {}
     }
+}
 
-    .btn--add-task {
-        padding: .5rem 1.5rem;
-        background-color: $color-orange;
-        color: $color-white;
-        border-radius: 10px;
-    }
-
+.btn--add-task {
+    padding: .5rem 1.5rem;
+    background-color: $color-orange;
+    color: $color-white;
+    border-radius: 10px;
 }
