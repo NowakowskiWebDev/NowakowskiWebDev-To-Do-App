@@ -1,3 +1,47 @@
 .header {
     grid-area: header;
+    text-align: center;
+
+    &__heading {
+        margin: 2rem 0 .5rem;
+        font-size: 2.2rem;
+        font-family: 'Lato-Bold';
+    }
+
+    &__paragraph {
+        margin-bottom: 2rem;
+        font-size: $default-font-size;
+
+    }
+
+    .search {
+        position: relative;
+        display: inline-block;
+
+        margin: 3.5rem auto 2rem;
+    }
+
+    .nav {
+        margin: 2rem auto;
+
+        &__lists {
+            // display: flex;
+            // flex-direction: column;
+            // justify-content: center;
+            // align-items: center;
+        }
+
+        &__item {
+            margin: 1.5rem auto;
+        }
+
+        &__link {
+            text-decoration: none;
+            font-size: $default-font-size;
+            padding: .5rem 1rem;
+            background-color: $color-orange;
+            color: $color-white;
+            border-radius: 20px;
+        }
+    }
 }
