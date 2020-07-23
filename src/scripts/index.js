@@ -14,7 +14,7 @@ let day;
 
 const getInputs = () => {
     name = elements.inputName.value;
-    category = elements.inputCategory.value;
+    category = elements.inputCategory.value.toUpperCase();
     day = elements.selectDay.value;
 }
 
@@ -24,7 +24,7 @@ const resetInputs = () => {
     elements.selectDay.value = '';
 }
 
-
+// CREATE TASK AFTER CLICK ON BUTTON
 elements.addTaskBtn.addEventListener('click', e => {
     e.preventDefault();
 
@@ -43,4 +43,11 @@ elements.addTaskBtn.addEventListener('click', e => {
             elements.divWarning.classList.remove('creation-section__warning--active')
         }, 2000)
     }
+})
+
+// RESTORE TASKS ON PAGE LOAD
+window.addEventListener('load', () => {
+    const newItem = new Items();
+    newItem.readStorage();
+    newItem.items.forEach(item => renderTask(item.name, item.category, item.day))
 })
