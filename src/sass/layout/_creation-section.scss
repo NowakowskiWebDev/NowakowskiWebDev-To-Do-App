@@ -1,5 +1,7 @@
 .creation-section {
     text-align: center;
+    position: relative;
+    margin-bottom: 1rem;
 
     .creation {
 
@@ -25,6 +27,23 @@
         &__group {
             position: relative;
 
+        }
+    }
+
+    &__warning {
+        font-size: $default-font-size;
+        background-color: red;
+        font-family: 'Lato-Bold';
+        color: $color-white;
+        opacity: 0;
+        padding: .5rem 1rem;
+        width: 75%;
+        margin: 0 auto;
+        border-radius: 5px;
+
+        &--active {
+            opacity: 1;
+            transition: all .2s linear;
         }
     }
 }
