@@ -5,6 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.min.css">
+    <script>
+        function myFunction() {
+
+            const getProduct = () => {
+                return products = document.querySelectorAll('#product-name');
+            }
+            const input = document.getElementById('search__input');
+            const p = getProduct();
+            const filter = input.value.toUpperCase();
+            const ul = document.getElementById('task__lists');
+            const li = ul.getElementsByTagName('li');
+            for (i = 0; i < p.length; i++) {
+                if (p[i].textContent.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
     <title>To Do App</title>
 </head>
 
@@ -14,7 +34,8 @@
             <h1 class="header__heading">Lista zadań</h1>
             <p class="header__paragraph">Aplikacja internetowa umożliwiająca planowanie zadań</p>
             <form class="search">
-                <input id="search__input" type="text" class="input search__input" placeholder="Wyszukaj zadanie">
+                <input onkeyup="myFunction()" id="search__input" type="text" class="input search__input"
+                    placeholder="Wyszukaj zadanie">
                 <label for="search__input" class="label search__label">Wyszukaj łatwo zadania</label>
             </form>
             <nav class="nav">

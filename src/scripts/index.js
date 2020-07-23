@@ -40,7 +40,7 @@ elements.addTaskBtn.addEventListener('click', e => {
         console.log('siema')
         elements.divWarning.classList.add('creation-section__warning--active');
         setTimeout(() => {
-            elements.divWarning.classList.toggle('creation-section__warning--active')
+            elements.divWarning.classList.remove('creation-section__warning--active')
         }, 2000)
     }
 })
