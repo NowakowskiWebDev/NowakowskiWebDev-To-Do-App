@@ -12,6 +12,11 @@ let name;
 let category;
 let day;
 
+// BUTTON CLASSES NAMES
+const CHECK = ".btn--task-done";
+const REMOVE = ".btn--task-remove";
+const EDIT = ".btn--task-edit";
+
 const getInputs = () => {
     name = elements.inputName.value;
     category = elements.inputCategory.value.toUpperCase();
@@ -34,10 +39,8 @@ elements.addTaskBtn.addEventListener('click', e => {
         const newItem = new Items();
         newItem.addItem(name, category, day);
         resetInputs();
-
-        renderTask(name, category, day)
+        renderTask(name, category, day);
     } else {
-        console.log('siema')
         elements.divWarning.classList.add('creation-section__warning--active');
         setTimeout(() => {
             elements.divWarning.classList.remove('creation-section__warning--active')
@@ -50,4 +53,23 @@ window.addEventListener('load', () => {
     const newItem = new Items();
     newItem.readStorage();
     newItem.items.forEach(item => renderTask(item.name, item.category, item.day))
+})
+
+// REMOVE TASK 
+elements.tasksList.addEventListener('click', (e) => {
+    const index = e.target.parentNode.dataset.id;
+
+    const newItem = new Items();
+
+    if (e.target.matches(CHECK)) {
+
+
+    } else if (e.target.matches(REMOVE)) {
+
+        newItem.deleteItem(index);
+        e.target.parentNode.remove();
+
+    } else if (e.target.matches(EDIT)) {
+
+    }
 })

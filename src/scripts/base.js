@@ -14,5 +14,5 @@ export const elements = {
 
     // TASK LISTS
     tasksList: document.getElementById('task__lists'),
-
+    taskItem: document.querySelectorAll('.task__item')
 };

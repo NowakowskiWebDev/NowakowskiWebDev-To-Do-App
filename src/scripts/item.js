@@ -23,6 +23,14 @@ export default class Item {
         this.addToStorage();
     }
 
+    deleteItem(currentID) {
+        this.readStorage();
+
+        this.items.splice(currentID, 1);
+
+        this.addToStorage();
+    }
+
     addToStorage() {
         localStorage.setItem('TODO', JSON.stringify(this.items));
     }
