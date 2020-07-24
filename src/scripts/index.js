@@ -52,7 +52,9 @@ elements.addTaskBtn.addEventListener('click', e => {
 window.addEventListener('load', () => {
     const newItem = new Items();
     newItem.readStorage();
-    newItem.items.forEach(item => renderTask(item.name, item.category, item.day))
+    newItem.items.forEach(item => {
+        renderTask(item.name, item.category, item.day);
+    })
 })
 
 // REMOVE TASK 
@@ -62,7 +64,9 @@ elements.tasksList.addEventListener('click', (e) => {
     const newItem = new Items();
 
     if (e.target.matches(CHECK)) {
-        e.target.parentNode.classList.toggle('task__item--active')
+        e.target.parentNode.classList.toggle('task__item--active');
+
+        newItem.changeFlagTask(index)
 
     } else if (e.target.matches(REMOVE)) {
 
@@ -70,6 +74,6 @@ elements.tasksList.addEventListener('click', (e) => {
         e.target.parentNode.remove();
 
     } else if (e.target.matches(EDIT)) {
-
+        // EMPTY. DO IN FUTURE
     }
 })

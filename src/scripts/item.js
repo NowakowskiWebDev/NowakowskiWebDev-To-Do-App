@@ -2,18 +2,21 @@ import {
     elements
 } from './base';
 
+// let flag;
+
 export default class Item {
     constructor() {
         this.items = [];
     }
 
 
-    addItem(name, category, day) {
+    addItem(name, category, day, flag = false) {
 
         const item = {
             name,
             category,
-            day
+            day,
+            flag,
         }
 
         this.readStorage();
@@ -40,5 +43,15 @@ export default class Item {
 
         if (storage) this.items = storage;
     }
+
+    changeFlagTask(currentID) {
+        this.readStorage()
+
+        this.items[currentID].flag = this.items[currentID].flag ? false : true;
+
+        this.addToStorage();
+    }
+
+
 
 }
