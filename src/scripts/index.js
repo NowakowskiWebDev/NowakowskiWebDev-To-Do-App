@@ -62,7 +62,7 @@ elements.tasksList.addEventListener('click', (e) => {
     const newItem = new Items();
 
     if (e.target.matches(CHECK)) {
-
+        e.target.parentNode.classList.toggle('task__item--active')
 
     } else if (e.target.matches(REMOVE)) {
 
