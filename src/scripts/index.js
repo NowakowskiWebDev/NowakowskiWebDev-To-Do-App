@@ -53,7 +53,7 @@ window.addEventListener('load', () => {
     const newItem = new Items();
     newItem.readStorage();
     newItem.items.forEach(item => {
-        renderTask(item.name, item.category, item.day);
+        renderTask(item.name, item.category, item.day, item.flag);
     })
 })
 
