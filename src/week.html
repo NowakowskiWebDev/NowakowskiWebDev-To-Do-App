@@ -14,10 +14,6 @@
         <header class="header">
             <h1 class="header__heading">Lista zadań</h1>
             <p class="header__paragraph">Aplikacja internetowa umożliwiająca planowanie zadań</p>
-            <form class="search">
-                <input id="search__input" type="text" class="input search__input" placeholder="Wpisz zadanie">
-                <label for="search__input" class="label search__label">Wyszukaj łatwo zadania</label>
-            </form>
             <nav class="nav">
                 <ul class="nav__lists">
                     <li class="nav__item"><a href="index.html" class="nav__link">Zadania</a></li>
@@ -27,7 +23,12 @@
             </nav>
         </header>
         <main class="main">
-            <p>It is main</p>
+            <section class="week-section">
+                <h2 class="week__heading-secondary">Zadania pogrupowane według dni</h2>
+                <ul id="week__lists" class="week__lists">
+
+                </ul>
+            </section>
         </main>
         <footer class="footer">
             <p class="footer__paragraph">&copy; Łukasz Nowakowski</p>

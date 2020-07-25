@@ -8,8 +8,9 @@ import {
     renderTask
 } from './renderTask';
 import {
-    renderCategory
-} from './renderCategory';
+    renderCategoryOrWeek
+} from './renderCategWeek';
+
 
 let name;
 let category;
@@ -63,7 +64,6 @@ if (document.body.contains(elements.addTaskBtn)) {
     })
 
     // REMOVE TASK 
-
     elements.tasksList.addEventListener('click', (e) => {
         const index = e.target.parentNode.dataset.id;
 
@@ -85,5 +85,5 @@ if (document.body.contains(elements.addTaskBtn)) {
     })
 }
 
-// RENDER CATEGORY FROM LOCAL STORAGE
-renderCategory();
+// RENDER CATEGORY OR DAYS FROM LOCAL STORAGE
+if (elements.categoryLists || elements.weekLists) renderCategoryOrWeek();;

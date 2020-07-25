@@ -1,15 +1,14 @@
-.categorys-section {
+.categorys-section,
+.week-section {
     // text-align: center;
     font-size: $default-font-size;
 
-    .category {
+    .sort {
         &__heading-secondary {
             text-align: center;
             font-size: 1.7rem;
             font-family: 'Lato-Bold';
         }
-
-        &__lists {}
 
         &__item {
             margin: 3rem auto;

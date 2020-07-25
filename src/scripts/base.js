@@ -19,5 +19,9 @@ export const elements = {
     // CATEGORY SECTION
     categoryLists: document.getElementById('category__lists'),
     categoryItem: document.querySelector('.category__item'),
-    categoryHeading: document.querySelector('category-heading')
+
+    // WEEK SECTION
+    weekLists: document.getElementById('week__lists'),
+    categoryItem: document.querySelector('.week__item'),
+
 };
