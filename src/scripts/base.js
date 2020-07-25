@@ -14,5 +14,10 @@ export const elements = {
 
     // TASK LISTS
     tasksList: document.getElementById('task__lists'),
-    taskItem: document.querySelectorAll('.task__item')
+    taskItem: document.querySelectorAll('.task__item'),
+
+    // CATEGORY SECTION
+    categoryLists: document.getElementById('category__lists'),
+    categoryItem: document.querySelector('.category__item'),
+    categoryHeading: document.querySelector('category-heading')
 };

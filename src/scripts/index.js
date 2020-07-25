@@ -7,6 +7,9 @@ from './item';
 import {
     renderTask
 } from './renderTask';
+import {
+    renderCategory
+} from './renderCategory';
 
 let name;
 let category;
@@ -29,51 +32,58 @@ const resetInputs = () => {
     elements.selectDay.value = '';
 }
 
+
 // CREATE TASK AFTER CLICK ON BUTTON
-elements.addTaskBtn.addEventListener('click', e => {
-    e.preventDefault();
+if (document.body.contains(elements.addTaskBtn)) {
+    elements.addTaskBtn.addEventListener('click', e => {
+        e.preventDefault();
 
-    getInputs();
+        getInputs();
 
-    if (name && category && day) {
-        const newItem = new Items();
-        newItem.addItem(name, category, day);
-        resetInputs();
-        renderTask(name, category, day);
-    } else {
-        elements.divWarning.classList.add('creation-section__warning--active');
-        setTimeout(() => {
-            elements.divWarning.classList.remove('creation-section__warning--active')
-        }, 2000)
-    }
-})
-
-// RESTORE TASKS ON PAGE LOAD
-window.addEventListener('load', () => {
-    const newItem = new Items();
-    newItem.readStorage();
-    newItem.items.forEach(item => {
-        renderTask(item.name, item.category, item.day, item.flag);
+        if (name && category && day) {
+            const newItem = new Items();
+            newItem.addItem(name, category, day);
+            resetInputs();
+            renderTask(name, category, day);
+        } else {
+            elements.divWarning.classList.add('creation-section__warning--active');
+            setTimeout(() => {
+                elements.divWarning.classList.remove('creation-section__warning--active')
+            }, 2000)
+        }
     })
-})
 
-// REMOVE TASK 
-elements.tasksList.addEventListener('click', (e) => {
-    const index = e.target.parentNode.dataset.id;
+    // RESTORE TASKS ON PAGE LOAD
+    window.addEventListener('load', () => {
+        const newItem = new Items();
+        newItem.readStorage();
+        newItem.items.forEach(item => {
+            renderTask(item.name, item.category, item.day, item.flag);
+        })
+    })
 
-    const newItem = new Items();
+    // REMOVE TASK 
 
-    if (e.target.matches(CHECK)) {
-        e.target.parentNode.classList.toggle('task__item--active');
+    elements.tasksList.addEventListener('click', (e) => {
+        const index = e.target.parentNode.dataset.id;
 
-        newItem.changeFlagTask(index)
+        const newItem = new Items();
 
-    } else if (e.target.matches(REMOVE)) {
+        if (e.target.matches(CHECK)) {
+            e.target.parentNode.classList.toggle('task__item--active');
 
-        newItem.deleteItem(index);
-        e.target.parentNode.remove();
+            newItem.changeFlagTask(index)
 
-    } else if (e.target.matches(EDIT)) {
-        // EMPTY. DO IN FUTURE
-    }
-})
+        } else if (e.target.matches(REMOVE)) {
+
+            newItem.deleteItem(index);
+            e.target.parentNode.remove();
+
+        } else if (e.target.matches(EDIT)) {
+            // EMPTY. DO IN FUTURE
+        }
+    })
+}
+
+// RENDER CATEGORY FROM LOCAL STORAGE
+renderCategory();

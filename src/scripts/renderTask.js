@@ -10,8 +10,6 @@ export function renderTask(nameValue, categoryValue, dayValue, flagValue = null)
     const classTrue = "task__item task__item--active";
     const classFalse = "task__item";
 
-    console.log(classTrue);
-    console.log(classFalse);
     const markup = `
     <li class="${flagValue ? classTrue : classFalse}" data-id=${counter} data-day=${dayValue}>
     <div class="task__values">

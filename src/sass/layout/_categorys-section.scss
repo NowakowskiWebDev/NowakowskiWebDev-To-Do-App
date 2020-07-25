@@ -1,0 +1,44 @@
+.categorys-section {
+    // text-align: center;
+    font-size: $default-font-size;
+
+    .category {
+        &__heading-secondary {
+            text-align: center;
+            font-size: 1.7rem;
+            font-family: 'Lato-Bold';
+        }
+
+        &__lists {}
+
+        &__item {
+            margin: 3rem auto;
+        }
+
+        &-heading {
+            @include flexAround;
+            background-color: $color-yellow;
+        }
+
+        &__heading-tertiary {
+            font-size: inherit;
+        }
+
+        &__btn-show {
+            display: inline-block;
+            margin: 0;
+        }
+
+        &__box-task {
+            @include flexCenter;
+            background-color: $color-gray-light;
+        }
+
+        &__paragraph {
+            margin: .8rem 0;
+            font-size: inherit;
+            width: 50%;
+            padding: 0 1rem;
+        }
+    }
+}
