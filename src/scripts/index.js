@@ -94,21 +94,35 @@ if (elements.categoryLists || elements.weekLists) {
     const clickTarget = elements.categoryLists ? elements.categoryLists : elements.weekLists;
 
     const newItem = new Items();
+    // const taskBoxID;
 
     clickTarget.addEventListener('click', (e) => {
         e.preventDefault();
+
+        // CHECK TASK IN CATEGORY/WEEK AND LOCAL STORAGE
         if (e.target.closest('.sort__btn-check')) {
 
-            const proba = e.target.closest('.sort__btn-check').parentNode;
+            const taskBox = e.target.closest('.sort__btn-check').parentNode;
 
-            const proba2 = e.target.closest('.sort__btn-check').parentNode;
+            const taskBoxID = taskBox.dataset.idtask;
 
-            console.log(proba2);
+            newItem.changeFlagTask(taskBoxID);
+
 
             e.target.closest('.sort__btn-check').classList.toggle('sort__btn-check--active');
 
-            proba.classList.toggle('sort__box-task--active');
-        } else if (e.target.closest('.sort__btn-remove')) {}
+            taskBox.classList.toggle('sort__box-task--active');
+            // REMOVE TASK IN CATEGORY/WEEK AND LOCAL STORAGE
+        } else if (e.target.closest('.sort__btn-remove')) {
+
+            const taskBox = e.target.closest('.sort__btn-remove').parentNode;
+
+            const taskBoxID = taskBox.dataset.idtask;
+
+            newItem.deleteItem(taskBoxID);
+
+            taskBox.remove();
+        }
     })
 
 }

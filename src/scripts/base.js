@@ -24,6 +24,7 @@ export const elements = {
     weekLists: document.getElementById('week__lists'),
     categoryItem: document.querySelector('.week__item'),
 
+
     // BTN IN SORT SECTION
     btnSortCheck: document.querySelector('sort__btn-check'),
     btnSortRemove: document.querySelector('sort__btn-remove'),

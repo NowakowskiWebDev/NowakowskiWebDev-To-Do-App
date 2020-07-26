@@ -21,8 +21,6 @@
             font-family: 'Lato-Bold';
         }
 
-        &__lists {}
-
         &__values {
             width: 100%;
             @include flexAround;
@@ -89,11 +87,6 @@
     }
 }
 
-// .path {
-//     height: 4rem;
-//     width: 4rem;
-// }
-
 .btn {
     @extend %inlineBlock;
     padding: .5rem 1.5rem;
@@ -105,10 +98,7 @@
         margin-right: 2rem;
     }
 
-    &--task-remove {}
-
     &--task-edit {
-
         margin-left: 2rem;
     }
 }

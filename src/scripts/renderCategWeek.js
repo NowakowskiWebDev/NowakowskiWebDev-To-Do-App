@@ -52,16 +52,12 @@ export function renderCategoryOrWeek() {
             const classFalseBtnCheck = "btn sort__btn-check";
 
             const markupTasks = `
-                <div data-flag="${flagValue}" class="${flagValue ? classTrueBox : classFalseBox}">
+                <div data-idtask="${item.idArray}" data-flag="${flagValue}" class="${flagValue ? classTrueBox : classFalseBox}">
                     <p class="sort__paragraph" id="sort__sort-name">${item.name}</p>
-  
+                    <button id="sort-check" class="${flagValue ? classTrueBtnCheck : classFalseBtnCheck}"><i class="fas fa-check-square"></i></button>
+                    <button id="sort-remove" class="btn sort__btn-remove"><i class="fas fa-trash"></i></button>
                 </div>
             `;
-
-
-            // Function in the future  
-            // <button id="sort-check" class="${flagValue ? classTrueBtnCheck : classFalseBtnCheck}"><i class="fas fa-check-square"></i></button>
-            // <button id="sort-remove" class="btn sort__btn-remove"><i class="fas fa-trash"></i></button>
 
             document.querySelector(`[data-idsort='${counter}']`).insertAdjacentHTML('beforeend', markupTasks);
         })

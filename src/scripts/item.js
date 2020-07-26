@@ -14,12 +14,14 @@ export default class Item {
 
         this.readStorage();
 
+        const idArray = this.items.length;
 
         const item = {
             name,
             category,
             day,
             flag,
+            idArray
         }
 
 
@@ -32,7 +34,7 @@ export default class Item {
         this.readStorage();
 
         this.items.splice(currentID, 1);
-
+        this.renderId();
         this.addToStorage();
     }
 
@@ -52,6 +54,16 @@ export default class Item {
         this.items[currentID].flag = this.items[currentID].flag ? false : true;
 
         this.addToStorage();
+    }
+
+
+    renderId() {
+        let counter = 0;
+
+        this.items.forEach(item => {
+            item.idArray = counter;
+            counter++;
+        })
     }
 
 
