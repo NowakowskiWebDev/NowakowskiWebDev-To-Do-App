@@ -10,7 +10,7 @@
         &__nameValues {
             @include flexAround;
             color: $color-white;
-            background: linear-gradient(45deg, rgba(4, 23, 92, 0.45) 0%, rgba(4, 23, 92, 0.45) 25%, rgba(23, 46, 132, 0.45) 25%, rgba(23, 46, 132, 0.45) 50%, rgba(42, 70, 173, 0.45) 50%, rgba(42, 70, 173, 0.45) 75%, rgba(61, 93, 213, 0.45) 75%, rgba(61, 93, 213, 0.45) 100%), linear-gradient(135deg, rgb(8, 63, 29) 0%, rgb(8, 63, 29) 25%, rgb(39, 70, 68) 25%, rgb(39, 70, 68) 50%, rgb(69, 77, 107) 50%, rgb(69, 77, 107) 75%, rgb(100, 84, 146) 75%, rgb(100, 84, 146) 100%);
+            background: $background-blue;
             height: 5rem;
             border-radius: 5px;
         }
@@ -36,8 +36,8 @@
             z-index: 2;
             word-break: break-all;
 
-            @media screen and (min-width: 390px) and (max-width: 600px) {
-                padding: 1rem 4.8rem;
+            @media screen and (min-width: 300px) and (max-width: 600px) {
+                padding: 3rem 1.8rem;
             }
 
             &::after {
@@ -78,8 +78,8 @@
             height: 7rem;
             width: 7rem;
             position: absolute;
-            bottom: -20px;
-            right: -20px;
+            bottom: -30px;
+            right: -30px;
         }
 
         &__icon-check {

@@ -2,7 +2,7 @@ import {
     elements
 } from './base';
 
-// let flag;
+let flag;
 
 export default class Item {
     constructor() {
@@ -12,6 +12,9 @@ export default class Item {
 
     addItem(name, category, day, flag = false) {
 
+        this.readStorage();
+
+
         const item = {
             name,
             category,
@@ -19,7 +22,6 @@ export default class Item {
             flag,
         }
 
-        this.readStorage();
 
         this.items.push(item);
 

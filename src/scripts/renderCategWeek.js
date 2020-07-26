@@ -31,7 +31,6 @@ export function renderCategoryOrWeek() {
         <li class="sort__item" data-idsort="${counter}">
             <div class="sort-heading">
                 <h3 id="sort__task-name" class="sort__heading-tertiary">${property.toUpperCase()}</h3>
-                <button class="btn sort__btn-show">X</button>
             </div>
         </li>
         `;
@@ -44,13 +43,25 @@ export function renderCategoryOrWeek() {
 
         tasksSort[property].forEach(item => {
 
+            const flagValue = item.flag;
+
+            const classTrueBox = "sort__box-task sort__box-task--active";
+            const classFalseBox = "sort__box-task";
+
+            const classTrueBtnCheck = "btn sort__btn-check sort__btn-check--active";
+            const classFalseBtnCheck = "btn sort__btn-check";
+
             const markupTasks = `
-                <div class="sort__box-task">
+                <div data-flag="${flagValue}" class="${flagValue ? classTrueBox : classFalseBox}">
                     <p class="sort__paragraph" id="sort__sort-name">${item.name}</p>
-                    <button class="btn sort__btn-check"><i class="fas fa-check-square"></i></button>
-                    <button class="btn sort__btn-remove"><i class="fas fa-trash"></i></button>
+  
                 </div>
             `;
+
+
+            // Function in the future  
+            // <button id="sort-check" class="${flagValue ? classTrueBtnCheck : classFalseBtnCheck}"><i class="fas fa-check-square"></i></button>
+            // <button id="sort-remove" class="btn sort__btn-remove"><i class="fas fa-trash"></i></button>
 
             document.querySelector(`[data-idsort='${counter}']`).insertAdjacentHTML('beforeend', markupTasks);
         })

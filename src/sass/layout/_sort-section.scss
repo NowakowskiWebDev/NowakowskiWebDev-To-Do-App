@@ -1,6 +1,6 @@
 .categorys-section,
 .week-section {
-    // text-align: center;
+    text-align: center;
     font-size: $default-font-size;
 
     .sort {
@@ -11,12 +11,38 @@
         }
 
         &__item {
-            margin: 3rem auto;
+            margin: 5rem auto;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+
+            &::after {
+                content: '';
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                z-index: -1;
+                box-shadow:
+                    0.7px 0.5px rgba(0, 0, 0, 0.034),
+                    0 1.6px 1.3px rgba(0, 0, 0, 0.048),
+                    0 3.1px 2.5px rgba(0, 0, 0, 0.06),
+                    0 5px 4.4px rgba(0, 0, 0, 0.072),
+                    0 10.4px 8.3px rgba(0, 0, 0, 0.086),
+                    0 25px 15px rgba(0, 0, 0, 0.12);
+            }
         }
+
+
 
         &-heading {
             @include flexAround;
-            background-color: $color-yellow;
+            height: 5rem;
+            background: $background-blue;
+            color: $color-white;
+            font-family: 'Lato-Bold';
+            letter-spacing: 1px;
         }
 
         &__heading-tertiary {
@@ -30,7 +56,11 @@
 
         &__box-task {
             @include flexCenter;
-            background-color: $color-gray-light;
+            position: relative;
+
+            &--active {
+                background-color: $color-green;
+            }
         }
 
         &__paragraph {
@@ -38,6 +68,34 @@
             font-size: inherit;
             width: 50%;
             padding: 0 1rem;
+        }
+
+        &__btn {
+            &-check {
+                color: $color-white;
+                border-radius: 50%;
+                height: 3rem;
+                width: 3rem;
+                @include flexCenter;
+
+                // color: $color-green;
+                // background-color: white;
+                &--active {
+                    color: $color-green;
+                    background-color: white;
+                }
+            }
+
+            &-remove {
+                color: $color-white;
+                border-radius: 50%;
+                height: 3rem;
+                width: 3rem;
+                @include flexCenter;
+
+                // color: $color-green;
+                // background-color: white;
+            }
         }
     }
 }

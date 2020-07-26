@@ -79,11 +79,36 @@ if (document.body.contains(elements.addTaskBtn)) {
             newItem.deleteItem(index);
             e.target.parentNode.remove();
 
-        } else if (e.target.matches(EDIT)) {
-            // EMPTY. DO IN FUTURE
         }
+        // else if (e.target.matches(EDIT)) {
+        // EMPTY. DO IN FUTURE
+        // }
     })
 }
 
+
 // RENDER CATEGORY OR DAYS FROM LOCAL STORAGE
-if (elements.categoryLists || elements.weekLists) renderCategoryOrWeek();;
+if (elements.categoryLists || elements.weekLists) {
+    renderCategoryOrWeek();
+
+    const clickTarget = elements.categoryLists ? elements.categoryLists : elements.weekLists;
+
+    const newItem = new Items();
+
+    clickTarget.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (e.target.closest('.sort__btn-check')) {
+
+            const proba = e.target.closest('.sort__btn-check').parentNode;
+
+            const proba2 = e.target.closest('.sort__btn-check').parentNode;
+
+            console.log(proba2);
+
+            e.target.closest('.sort__btn-check').classList.toggle('sort__btn-check--active');
+
+            proba.classList.toggle('sort__box-task--active');
+        } else if (e.target.closest('.sort__btn-remove')) {}
+    })
+
+}
