@@ -1,0 +1,18 @@
+<!doctype html><html lang="pl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="css/style.min.css"><script>function myFunction() {
+
+            const getProduct = () => {
+                return products = document.querySelectorAll('#task-name');
+            }
+            const input = document.getElementById('search__input');
+            const p = getProduct();
+            const filter = input.value.toUpperCase();
+            const ul = document.getElementById('task__lists');
+            const li = ul.getElementsByTagName('li');
+            for (i = 0; i < p.length; i++) {
+                if (p[i].textContent.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }</script><title>To Do App</title></head><body><div class="container"><header class="header"><h1 class="header__heading">Lista zadań</h1><p class="header__paragraph">Aplikacja internetowa umożliwiająca planowanie zadań</p><form class="search"><input onkeyup="myFunction()" id="search__input" class="input search__input" placeholder="Wyszukaj zadanie"> <label for="search__input" class="label search__label">Wyszukaj łatwo zadania</label></form><nav class="nav"><ul class="nav__lists"><li class="nav__item"><a href="index.html" class="nav__link">Zadania</a></li><li class="nav__item"><a href="category.html" class="nav__link">Kategorie zadań</a></li><li class="nav__item"><a href="week.html" class="nav__link">Podział tygodniowy</a></li></ul></nav></header><main class="main"><section class="creation-section"><h2 class="creation__heading-secondary">Dodaj zadanie</h2><form class="creation__task"><div class="creation__group"><input id="creation__input-name" class="input creation__input" placeholder="Zadanie"> <label class="label creation__label" for="creation__input-name">Zadanie</label></div><div class="creation__group"><input id="creation__input-category" class="input creation__input" placeholder="Kategoria"> <label class="label creation__label" for="creation__input-category">Kategoria</label></div><select id="creation__select" class="creation__select" name="day" id="day"><option value="">--Dzień--</option><option value="poniedziałek">Poniedziałek</option><option value="wtorek">Wtorek</option><option value="środa">Środa</option><option value="czwartek">Czwartek</option><option value="piątek">Piątek</option><option value="sobota">Sobota</option><option value="niedziela">Niedziela</option></select> <button class="btn btn--add-task">Dodaj</button></form><p class="creation-section__warning">Proszę uzupełnić wszystkie pola</p></section><section class="tasks-section"><div class="task__nameValues"><h3 class="heading-tertiary task__heading-tertiary">Nazwa zadania</h3><h3 class="heading-tertiary task__heading-tertiary">Kategoria</h3></div><ul id="task__lists" class="task__lists"></ul></section></main><footer class="footer"><p class="footer__paragraph">&copy; Łukasz Nowakowski</p></footer></div><script src="js/bundle.js"></script></body></html>
